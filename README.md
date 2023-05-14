@@ -1,5 +1,20 @@
 # AbuSiddiqueMyFavouritMovie
 
+## Assignment 01
+The Theme is My Favourite Movies
+
+I added the   
+    Title, 
+    Short description,
+    Creator,
+    image of the movie (poster)
+    type of the movie.
+
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
 ## Development server
