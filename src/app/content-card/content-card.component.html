@@ -1,5 +1,6 @@
 <h1 style="background-color: rgb(186, 134, 235);">Favourite Movie List</h1>
 <div *ngFor="let content of contentList.contentArray">
     <div [innerHTML]="contentList.getContentHTML(content.id - 1)"></div>
+    <hr>
   </div>
   <hr>
