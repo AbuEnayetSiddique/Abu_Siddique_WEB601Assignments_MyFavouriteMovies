@@ -2,7 +2,11 @@
      [style.border]="isFirst ? '2px solid black' : '1px solid black'" class="contentList" [content]="content">
 
 </app-content-card> -->
+
+
 <div>
-     <app-content-card *ngFor="let content of contentListArray | slice: 0:5; let isFirst = first" 
-      [content]="content"></app-content-card>
+     <div>
+          <app-content-card *ngFor="let content of contentListArray | slice: 0:5; let isFirst = first" 
+          [content]="content"></app-content-card>
    </div>
+</div>
