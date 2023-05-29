@@ -37,30 +37,30 @@ export class ContentListComponent {
     },
     {
       id: 4,
-      title: 'The Flowers of War',
-      description: 'Chinese-Hong Kong historical drama war film',
-      creator: 'Zhang Yimou',
-      imgURL: 'assets/img/img1.jpg',
-      type: 'History, Thriller, Suspence',
-      tags: ['2011']
+      title: 'Gladiator',
+      description: 'Epic historical drama film directed by Ridley Scott and written by David Franzoni, John Logan, and William Nicholson.',
+      creator: 'Ridley Scott',
+      imgURL: 'assets/img/img4.png',
+      type: 'History, Action',
+      tags: ['2000']
     },
     {
       id: 5,
-      title: 'The Flowers of War',
-      description: 'Chinese-Hong Kong historical drama war film',
-      creator: 'Zhang Yimou',
-      imgURL: 'assets/img/img1.jpg',
-      type: 'History, Thriller, Suspence',
-      tags: ['2011']
+      title: 'Ice Age',
+      description: 'Computer-animated adventure comedy film produced by Blue Sky Studios',
+      creator: 'Chris Wedge',
+      imgURL: 'assets/img/img5.jpg',
+      type: 'Animated, Adventure, Comedy',
+      tags: ['2002']
     },
     {
       id: 6,
-      title: 'The Flowers of War',
-      description: 'Chinese-Hong Kong historical drama war film',
-      creator: 'Zhang Yimou',
-      imgURL: 'assets/img/img1.jpg',
-      type: 'History, Thriller, Suspence',
-      tags: ['2011']
+      title: 'The Notebook',
+      description: 'Romantic drama film based on the 1996 novel of the same name by Nicholas Sparks.',
+      creator: 'Nick Cassavetes',
+      imgURL: 'assets/img/img6.jpg',
+      type: 'Romantic',
+      tags: ['2004']
     }
     ];
 

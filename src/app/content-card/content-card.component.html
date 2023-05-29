@@ -1,0 +1,18 @@
+
+<!-- <div>
+  <h2>{{ content.title }}</h2>
+  <p>{{ content.description }}</p>
+  <img *ngIf="content.imgURL" [src]="content.imgURL" (click)="showContent(content)">
+  <p>{{ content.creator }}</p>
+  <p *ngIf="content.type">{{ content.type }}</p>
+  <p *ngIf="content.tags">{{ content.tags }}</p>
+</div> -->
+
+<div class="contentList">
+  <h3>{{ content.title }}</h3>
+  <p>{{ content.description }}</p>
+  <img *ngIf="content.imgURL" [src]="content.imgURL">
+  <p>{{ content.creator }}</p>
+  <p *ngIf="content.type">{{ content.type }}</p>
+  <p *ngIf="content.tags">{{ content.tags }}</p>
+</div>
