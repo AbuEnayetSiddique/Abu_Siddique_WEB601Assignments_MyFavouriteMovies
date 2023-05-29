@@ -7,7 +7,11 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent {
-    contentListArray =[
+  findTitle : string ='';
+  filterResult: boolean = false;
+  message :string =''
+
+    contentList:Content[] =[
     {
       id: 1,
       title: 'The Flowers of War',
@@ -61,12 +65,25 @@ export class ContentListComponent {
       imgURL: 'assets/img/img6.jpg',
       type: 'Romantic',
       tags: ['2004']
+    },
+    {
+      id: 7,
+      title: 'Gladiator02',
+      description: 'Epic historical drama film directed by Ridley Scott and written by David Franzoni, John Logan, and William Nicholson.',
+      creator: 'Ridley Scott',
+      imgURL: 'assets/img/img4.png',
+      type: 'History, Action',
+      tags: ['2002']
     }
-    ];
+    ]
 
-    showContent(getContent: any) {
-      console.log('Content ID:', getContent.id);
-      console.log('Content Title:', getContent.title);
-  }
-
+    findContent() {
+      this.filterResult = this.contentList.some(content => content.title === this.findTitle);
+    
+      if (this.filterResult) {
+        this.message = 'title exists.';
+      } else {
+        this.message = ' title does not exist.';
+      }
+    }
   }

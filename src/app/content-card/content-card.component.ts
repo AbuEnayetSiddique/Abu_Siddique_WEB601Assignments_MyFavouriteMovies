@@ -7,6 +7,10 @@ import { ContentListComponent } from '../content-list/content-list.component';
   templateUrl: './content-card.component.html',
   styleUrls: ['./content-card.component.scss']
 })
-export class ContentCardComponent {
-  @Input() content: Content;
+export class ContentCardComponent{
+  clickEvent(){
+    console.log(this.content.id, this.content.title)
+}
+@Input() content : Content;
+@Input() first: boolean
 }

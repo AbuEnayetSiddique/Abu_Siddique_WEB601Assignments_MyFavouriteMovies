@@ -2,11 +2,35 @@
      [style.border]="isFirst ? '2px solid black' : '1px solid black'" class="contentList" [content]="content">
 
 </app-content-card> -->
+<!-- 
 
 
 <div>
-     <div>
-          <app-content-card *ngFor="let content of contentListArray | slice: 0:5; let isFirst = first" 
-          [content]="content"></app-content-card>
-   </div>
+     <app-content-card *ngFor="let content of contentListArray | slice: 0:5; let isFirst = first" 
+     [content]="content"></app-content-card>
+</div> -->
+
+
+<h1 style="background-color: rgba(158, 203, 100, 0.755);">MY Favourite Movies</h1>
+<div id="filter">
+<input [(ngModel)]="findTitle"><button (click)="findContent()">Search</button>
+<br>
+{{message}}
+</div>
+<div id="none">
+<h1>No Type</h1>
+<app-content-card class="none" *ngFor="let item of (contentList | contentFilter :'' )" [content]="item"  [ngClass]="{'highlight': item.title === findTitle && filterResult}" >
+</app-content-card>
+</div>
+
+<div  id ="History" >
+<h1>History Type</h1>
+<app-content-card  *ngFor="let item of (contentList | contentFilter :'History' )" [content]="item" [ngClass]="{'highlight': item.title === findTitle && filterResult}" >
+</app-content-card>
+</div>
+
+<div id ="Comedy">
+<h1>Comedy Type</h1>
+<app-content-card  *ngFor="let item of (contentList | contentFilter :'Comedy' )" [content]="item" [ngClass]="{'highlight': item.title === findTitle && filterResult}">
+</app-content-card>
 </div>
