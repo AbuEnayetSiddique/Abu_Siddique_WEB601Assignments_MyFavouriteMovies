@@ -9,7 +9,8 @@ import { Content } from '../helper-files/content-interface';
 export class ContentListComponent {
   findTitle : string ='';
   filterResult: boolean = false;
-  message :string =''
+  searchResult: string = '';
+  isContentFound: boolean = false;
 
     contentList:Content[] =[
     {
@@ -18,7 +19,7 @@ export class ContentListComponent {
       description: 'Chinese-Hong Kong historical drama war film',
       creator: 'Zhang Yimou',
       imgURL: 'assets/img/img1.jpg',
-      type: 'History, Thriller, Suspence',
+      type: 'History',
       tags: ['2011']
     },
     {
@@ -36,7 +37,7 @@ export class ContentListComponent {
       description: 'Epic historical Torjan War film',
       creator: 'Wolfgang Petersen',
       imgURL: 'assets/img/img3.jpg',
-      type: 'History, Thriller, Action',
+      type: 'History',
       tags: ['2004']
     },
     {
@@ -45,7 +46,7 @@ export class ContentListComponent {
       description: 'Epic historical drama film directed by Ridley Scott and written by David Franzoni, John Logan, and William Nicholson.',
       creator: 'Ridley Scott',
       imgURL: 'assets/img/img4.png',
-      type: 'History, Action',
+      type: 'History',
       tags: ['2000']
     },
     {
@@ -54,7 +55,7 @@ export class ContentListComponent {
       description: 'Computer-animated adventure comedy film produced by Blue Sky Studios',
       creator: 'Chris Wedge',
       imgURL: 'assets/img/img5.jpg',
-      type: 'Animated, Adventure, Comedy',
+      type: 'Comedy',
       tags: ['2002']
     },
     {
@@ -63,7 +64,7 @@ export class ContentListComponent {
       description: 'Romantic drama film based on the 1996 novel of the same name by Nicholas Sparks.',
       creator: 'Nick Cassavetes',
       imgURL: 'assets/img/img6.jpg',
-      type: 'Romantic',
+      type: '',
       tags: ['2004']
     },
     {
@@ -80,10 +81,8 @@ export class ContentListComponent {
     findContent() {
       this.filterResult = this.contentList.some(content => content.title === this.findTitle);
     
-      if (this.filterResult) {
-        this.message = 'title exists.';
-      } else {
-        this.message = ' title does not exist.';
+      this.isContentFound = !!this.filterResult;
+      this.searchResult = this.isContentFound ? 'Content item found!' : 'Content item not found!';
       }
-    }
+    
   }
