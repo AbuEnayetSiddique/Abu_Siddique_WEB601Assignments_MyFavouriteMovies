@@ -11,11 +11,11 @@
 </div> -->
 
 
-<h1 style="background-color: rgba(158, 203, 100, 0.755);">MY Favourite Movies</h1>
+<h1 style="background-color: rgb(13, 228, 199); text-align: center;">MY Favourite Movies</h1>
 <div id="filter">
 <input [(ngModel)]="findTitle"><button (click)="findContent()">Search</button>
 <br>
-{{message}}
+<p [style.color]="isContentFound ? 'green' : 'red'">{{ searchResult  }}</p>
 </div>
 <div id="none">
 <h1>No Type</h1>
