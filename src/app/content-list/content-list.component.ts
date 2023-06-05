@@ -36,7 +36,7 @@ export class ContentListComponent {
       title: 'Troy',
       description: 'Epic historical Torjan War film',
       creator: 'Wolfgang Petersen',
-      imgURL: 'assets/img/img3.jpg',
+      imgURL: '',
       type: 'History',
       tags: ['2004']
     },
