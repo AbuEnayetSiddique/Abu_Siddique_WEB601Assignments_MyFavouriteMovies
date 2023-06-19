@@ -8,14 +8,17 @@
   <p *ngIf="content.tags">{{ content.tags }}</p>
 </div> -->
 
-<div class="contentList" *ngIf ="content.type ==='History' || content.type === 'Comedy' || content.type ===''"  [ngStyle]="{'margin': '30px '  }">
+<div class="contentList" *ngIf ="content.type ==='History' || content.type === 'Comedy' || content.type ===''"  [ngStyle]="{'margin': '30px'}">
 
-  <div  >
-          <h2>{{content.title}}</h2>
-          <p>{{content.description}}</p>
-          <p>Creator: {{content.creator}}</p>
-          <img  *ngIf="content.imgURL" (click)="clickEvent()" src='{{content.imgURL}}'>
-          <p *ngIf="content.type" > Type: {{content.type}}</p>
-          <p *ngIf="content.tags && content.tags.length > 0"> Tag: {{content.tags}}</p>
+  <div>
+    <h2 [ngStyle]="{'background-color': 'rgb(247, 183, 54)'}">{{content.title}}</h2>
+    <p>{{content.description}}</p>
+    <p>Creator: {{content.creator}}</p>
+    <img  *ngIf="content.imgURL; else defaultImage" (click)="clickEvent()" src='{{content.imgURL}}'>
+      <ng-template #defaultImage>
+        <img src="assets/img/defaultImg.jpg">
+      </ng-template>
+    <p *ngIf="content.type" appHoverAffect [affectStyle]="'underline'" > Type: {{content.type}}</p>
+    <p *ngIf="content.tags && content.tags.length > 0" appHoverAffect [affectStyle]="'bold'"> Tag: {{content.tags}}</p>
   </div>
-  </div>
+</div>

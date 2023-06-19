@@ -17,7 +17,9 @@
 <br>
 <p [style.color]="isContentFound ? 'green' : 'red'">{{ searchResult  }}</p>
 </div>
-<div id="none">
+
+
+<div id="none">     
 <h1>No Type</h1>
 <app-content-card class="none" *ngFor="let item of (contentList | contentFilter :'' )" [content]="item"  [ngClass]="{'highlight': item.title === findTitle && filterResult}" >
 </app-content-card>

@@ -7,11 +7,7 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent {
-  findTitle : string ='';
-  filterResult: boolean = false;
-  searchResult: string = '';
-  isContentFound: boolean = false;
-
+ 
     contentList:Content[] =[
     {
       id: 1,
@@ -36,7 +32,7 @@ export class ContentListComponent {
       title: 'Troy',
       description: 'Epic historical Torjan War film',
       creator: 'Wolfgang Petersen',
-      imgURL: 'assets/img/img3.jpg',
+      imgURL: '',
       type: 'History',
       tags: ['2004']
     },
@@ -77,9 +73,13 @@ export class ContentListComponent {
       tags: ['2002']
     }
     ]
+    findTitle : string ='';
+    filterResult: boolean = false;
+    searchResult: string = '';
+    isContentFound: boolean = false;
 
     findContent() {
-      this.filterResult = this.contentList.some(content => content.title === this.findTitle);
+      this.filterResult = this.contentList.some(c => c.title === this.findTitle);
     
       this.isContentFound = !!this.filterResult;
       this.searchResult = this.isContentFound ? 'Content item found!' : 'Content item not found!';
