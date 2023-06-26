@@ -27,7 +27,6 @@ export class CreateContentComponent {
         description: this.description,
         creator: this.creator,
         type: this.type,
-        // Add other necessary fields
       };
 
       if(this.id && this.title && this.description && this.creator && this.type) {
@@ -57,7 +56,7 @@ export class CreateContentComponent {
   }
 
   clearField(){
-    this.id = ''; // Clear input field value
+    this.id = '';
     this.title = '';
     this.description = '';
     this.creator = '';
