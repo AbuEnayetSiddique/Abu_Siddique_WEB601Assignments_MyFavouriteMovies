@@ -8,6 +8,10 @@ import { ContentFilterPipe } from './content-filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { HoverAffectDirective } from './hover-affect.directive';
 import { AppMessagesComponent } from './app-messages/app-messages.component';
+import { ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
+import { MessageService } from './services/message.service';
+import { HttpClientModule } from '@angular/common/http';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 
 @NgModule({
@@ -17,13 +21,15 @@ import { AppMessagesComponent } from './app-messages/app-messages.component';
     ContentListComponent,
     ContentFilterPipe,
     HoverAffectDirective,
-    AppMessagesComponent
+    AppMessagesComponent,
+    ModifyContentComponentComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

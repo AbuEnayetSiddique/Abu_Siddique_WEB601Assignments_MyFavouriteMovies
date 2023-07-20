@@ -11,6 +11,9 @@
 </div> -->
 
 <!---->
+
+<app-modify-content-component (contentAdded)="handleContentAdded($event)"></app-modify-content-component>
+
 <h1 style="background-color: rgb(13, 228, 199); text-align: center;">MY Favourite Movies</h1>
 <div id="filter">
 <input [(ngModel)]="findTitle"><button (click)="findContent()">Search</button>

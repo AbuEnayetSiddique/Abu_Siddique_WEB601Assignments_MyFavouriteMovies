@@ -1,23 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { MovieService } from '../services/movie.service';
 import { contentList } from '../helper-files/contentDb';
+import { InMemoryDataService } from '../services/in-memory-data.service';
 
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
   styleUrls: ['./content-list.component.scss']
 })
-export class ContentListComponent {
+export class ContentListComponent implements OnInit{
  
-  contentList:any[];
+  contentList: Content[] = [];
 
-  constructor(private movieService:MovieService){
-    this.contentList = contentList;
+  constructor(private movieService:MovieService,private inMemoryDataService:InMemoryDataService){
+    //this.contentListArray = contentListArray;
   }
   ngOnInit(): void {
+    this.getContents();
     this.movieService.getContentArray().subscribe((data: any[])=>{
-      this.contentList=data;
+      //this.contentList=data;
     });
   }
 
@@ -31,6 +33,21 @@ export class ContentListComponent {
     
       this.isContentFound = !!this.filterResult;
       this.searchResult = this.isContentFound ? 'Content item found!' : 'Content item not found!';
+      }
+
+      getContents(): void {
+        this.movieService.getContent().subscribe((contents) => {
+          this.contentList = contents;
+        });
+      }
+      handleContentAdded(content: Content): void {
+        const existingContentIndex = this.contentList.findIndex((c) => c.id === content.id);
+    
+        if (existingContentIndex !== -1) {
+          this.contentList[existingContentIndex] = content;
+        } else {
+          this.contentList.push(content);
+        }
       }
     
   }
